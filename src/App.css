@@ -1,3 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  /* ## Colors */
+
+  /* ### Primary */
+
+--Dark-Gray: hsl(0, 0%, 63%);
+--Black: hsl(0, 0%, 0%);
+--White: hsl(0, 0%, 100%);
+--Very-Dark-Gray: hsl(0, 0%, 27%);
+
+/* ## Typography */
+
+/* ### Body Copy */
+
+--Font-size: 12px;
+}
+
+body{
+  font-family: 'League Spartan';
+  font-size: 13.5px;
+  position: relative;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.nav-list{
+  display: flex;
+  gap: 2rem;
+}
+.nav-list a{
+  text-decoration: none;
+  color: var(--White);
+}
+
+.slider{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 720px) {
+  .slider{
+    grid-template-columns: 1fr;
+  }
+}
+
+.slider__image--container{
+  position: relative;
+}
+
+.slider__image source,
+.slider__image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__content--container{
+  position: relative;
+}
+
+.slider__content{
+  padding: 4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.slider__content-header{
+  font-size: 2.5rem;
+}
+
+.slider__content-body, .about__content-text{
+  line-height: 2.5ch;
+  color: var(--Dark-Gray);
+}
+
+.slider__content-link{
+  text-decoration: none;
+  color: var(--Black);
+  letter-spacing: 1.8ch;
+}
+
+.slider__controls{
+  padding: 2rem;
+  background-color: var(--Black);
+  width: fit-content;
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+}
+.slider__controls-desktop{
+  left: 0;
+}
+.slider__controls-mobile{
+  right: 0;
+  display: none;
+}
+
+@media screen and (max-width:720px) {
+  .slider__controls-desktop{
+    display: none;
+  }
+  .slider__controls-mobile{
+    display: flex;
+  }
+}
+
+.slider__controls a{
+  color: var(--White);
+  text-decoration: none;
+}
+
+.about{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 720px) {
+  .about{
+    grid-template-columns: 1fr;
+  }
+}
+
+.about__content{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about__photo-1 img,
+.about__photo-2 img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+/*================================================*/
+
 .App {
   text-align: center;
 }
