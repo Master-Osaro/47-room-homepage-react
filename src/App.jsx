@@ -3,9 +3,19 @@ import mobileHeroImage1 from './images/mobile-image-hero-1.jpg';
 import aboutPhotoDark from './images/image-about-dark.jpg';
 import aboutPhotoLight from './images/image-about-light.jpg';
 import Header from './components/Header';
+import data from './data/data';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const prev =()=>{
+    currentSlide>0?setCurrentSlide(currentSlide-1):setCurrentSlide(2);
+  }
+  const next =()=>{
+    currentSlide<2?setCurrentSlide(currentSlide+1):setCurrentSlide(0);
+  }
   return (
     <>
     <Header />
@@ -13,25 +23,23 @@ function App() {
       <div className="slider">
         <div className="slider__image--container">
           <picture className="slider__image">
-            <source srcSet={mobileHeroImage1} media="(max-width: 600px)" />
-            <img src={heroImage1} alt="MDN" />
+            <source srcSet={data.slide[currentSlide].images.mobileImage} media="(max-width: 600px)" />
+            <img src={data.slide[currentSlide].images.heroImage} alt="MDN" />
           </picture>
           <div className="slider__controls slider__controls-mobile">
-            <a href="#prev" className="previous">previous</a>
-            <a href="#nxt" className="next">next</a>
+            <a href="#prev" className="previous" onClick={()=>{prev()}}>previous</a>
+            <a href="#nxt" className="next" onClick={()=>{next()}}>next</a>
           </div>
         </div>
         <div className="slider__content--container">
           <div className="slider__content">
-            <h1 className="slider__content-header"> Discover innovative ways to decorate</h1>
-            <p className="slider__content-body">We provide unmatched quality, comfort, and style for property owners across the country. 
-              Our experts combine form and function in bringing your vision to life. Create a room in your 
-              own style with our collection and make your property a reflection of you and what you love.</p>
+            <h1 className="slider__content-header"> {data.slide[currentSlide].title}</h1>
+            <p className="slider__content-body">{data.slide[currentSlide].content}</p>
             <a href="" className="slider__content-link">SHOP NOW</a>
           </div>
           <div className="slider__controls slider__controls-desktop">
-            <a href="#prev" className="previous">previous</a>
-            <a href="#nxt" className="next">next</a>
+            <a href="#prev" className="previous" onClick={()=>{prev()}}>previous</a>
+            <a href="#nxt" className="next" onClick={()=>{next()}}>next</a>
           </div>
         </div>
       </div>
