@@ -135,15 +135,16 @@ nav{
 
 .slider__content--container{
   position: relative;
+  min-width: 364px ;
 }
 
 .slider__content{
-  padding: 4rem;
+  padding: 3.5rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .slider__content-header{
@@ -166,7 +167,7 @@ nav{
   background-color: var(--Black);
   width: fit-content;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   position: absolute;
   bottom: 0;
 }
@@ -210,6 +211,11 @@ nav{
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+}
+
+.about__content-header{
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
 }
 
 .about__photo-1 img,

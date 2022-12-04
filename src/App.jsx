@@ -1,5 +1,8 @@
 import aboutPhotoDark from './images/image-about-dark.jpg';
 import aboutPhotoLight from './images/image-about-light.jpg';
+import iconAngleLeft from './images/icon-angle-left.svg';
+import iconAngleRight from './images/icon-angle-right.svg';
+import iconArrows from './images/icon-arrow.svg';
 import Header from './components/Header';
 import data from './data/data';
 import './App.css';
@@ -25,19 +28,19 @@ function App() {
             <img src={data.slide[currentSlide].images.heroImage} alt="MDN" />
           </picture>
           <div className="slider__controls slider__controls-mobile">
-            <a href="#prev" className="previous" onClick={()=>{prev()}}>previous</a>
-            <a href="#nxt" className="next" onClick={()=>{next()}}>next</a>
+            <a href="#prev" className="previous" onClick={()=>{prev()}}> <img src={iconAngleLeft} alt="" /> </a>
+            <a href="#nxt" className="next" onClick={()=>{next()}}><img src={iconAngleRight} alt="" /> </a>
           </div>
         </div>
         <div className="slider__content--container">
           <div className="slider__content">
             <h1 className="slider__content-header"> {data.slide[currentSlide].title}</h1>
             <p className="slider__content-body">{data.slide[currentSlide].content}</p>
-            <a href="" className="slider__content-link">SHOP NOW</a>
+            <a href="" className="slider__content-link">SHOP NOW <img src={iconArrows} alt="" /></a>
           </div>
           <div className="slider__controls slider__controls-desktop">
-            <a href="#prev" className="previous" onClick={()=>{prev()}}>previous</a>
-            <a href="#nxt" className="next" onClick={()=>{next()}}>next</a>
+            <a href="#prev" className="previous" onClick={()=>{prev()}}> <img src={iconAngleLeft} alt="" /> </a>
+            <a href="#nxt" className="next" onClick={()=>{next()}}><img src={iconAngleRight} alt="" /> </a>
           </div>
         </div>
       </div>
