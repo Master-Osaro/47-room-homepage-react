@@ -1,10 +1,26 @@
 import logo from '../images/logo.svg';
+import hamIcon from '../images/icon-hamburger.svg';
+import closeIcon from '../images/icon-close.svg';
+import { useEffect, useState } from 'react';
 const Header =({})=>{
+    let checkbox = '';
+    useEffect(()=>{
+        checkbox = document.querySelector('#navCheckbox');
+    })
+    const [mobileNavOpen, setMobileNavOpen] =useState(false)
     return(
         <header>
-            <nav>
+            <nav className={mobileNavOpen?`nav-open-mobile`:""}>
+                <label htmlFor="navCheckbox" onClick={()=>{
+                        console.log(!checkbox.checked);
+                        setMobileNavOpen(!checkbox.checked)
+                    }}>
+                    <div className="menuIcon"><img src={mobileNavOpen?closeIcon:hamIcon} alt=""/></div>
+                </label>
                 <div className="logo"><img src={logo} alt="" /></div>
-                    <ul className="nav-list">
+                
+                <input type="checkbox" name="navCheckbox" id="navCheckbox"/>
+                <ul className="nav-list">
                     <a href="#">home</a>
                     <a href="#">shop</a>
                     <a href="#">about</a>

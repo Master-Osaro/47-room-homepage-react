@@ -43,6 +43,34 @@ nav{
   width: 100%;
   max-width: 400px;
   padding: 2rem;
+  color: var(--White);
+}
+
+@media screen and (max-width: 720px) {
+  nav{
+    max-width: 100%;
+  }
+  .nav-open-mobile{
+    background-color: var(--White);
+    color: var(--Black);
+  }
+}
+
+
+.menuIcon{
+  display: none;
+}
+
+
+
+@media screen and (max-width: 720px) {
+  .menuIcon{
+    display: block;
+  }
+}
+
+#navCheckbox{
+  display: none;
 }
 
 .nav-list{
@@ -51,8 +79,23 @@ nav{
 }
 .nav-list a{
   text-decoration: none;
-  color: var(--White);
+  color: inherit;
 }
+
+@media screen and (max-width: 720px) {
+  .menuIcon{
+    display: block;
+  }
+  
+  #navCheckbox,.nav-list{
+    visibility: hidden;
+  }
+
+  #navCheckbox:checked~.nav-list{
+    visibility: visible;
+  }
+}
+
 
 .slider{
   display: grid;

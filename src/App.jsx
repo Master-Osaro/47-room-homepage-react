@@ -1,5 +1,3 @@
-import heroImage1 from './images/desktop-image-hero-1.jpg';
-import mobileHeroImage1 from './images/mobile-image-hero-1.jpg';
 import aboutPhotoDark from './images/image-about-dark.jpg';
 import aboutPhotoLight from './images/image-about-light.jpg';
 import Header from './components/Header';
