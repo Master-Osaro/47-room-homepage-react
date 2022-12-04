@@ -27,9 +27,18 @@ body{
   font-family: 'League Spartan';
   font-size: 13.5px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-header{
+header,main{
+  width: 100%;
+  max-width: 1440px;
+  position: relative;
+}
+
+.header__inner{
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +51,7 @@ nav{
   justify-content: space-between;
   width: 100%;
   max-width: 400px;
-  padding: 2rem;
+  padding: 4rem 2rem;
   color: var(--White);
 }
 
@@ -69,13 +78,17 @@ nav{
   }
 }
 
+
+.navCheckboxLabel{
+  margin-right: 0.5rem;
+}
 #navCheckbox{
   display: none;
 }
 
 .nav-list{
   display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
 }
 .nav-list a{
   text-decoration: none;

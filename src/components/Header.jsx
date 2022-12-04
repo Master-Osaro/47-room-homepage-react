@@ -10,8 +10,9 @@ const Header =({})=>{
     const [mobileNavOpen, setMobileNavOpen] =useState(false)
     return(
         <header>
+            <div className="header__inner">
             <nav className={mobileNavOpen?`nav-open-mobile`:""}>
-                <label htmlFor="navCheckbox" onClick={()=>{
+                <label htmlFor="navCheckbox" className='navCheckboxLabel' onClick={()=>{
                         console.log(!checkbox.checked);
                         setMobileNavOpen(!checkbox.checked)
                     }}>
@@ -27,6 +28,8 @@ const Header =({})=>{
                     <a href="#">contact</a>
                 </ul>
             </nav>
+            </div>
+            
         </header>
     )
 }
