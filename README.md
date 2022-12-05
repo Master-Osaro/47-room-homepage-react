@@ -77,6 +77,8 @@ Keboard Event Listener Issues [StackOverflow: keybard Event Listener is being ca
 
 Memoization in javascript [Geeks for geeks: Javascript Memoization](https://www.geeksforgeeks.org/javascript-memoization/)
 
+Keypress Event Key Codes for Enter, Space, Backspace, and More [JavaScript Keycode List - FreeCodeCamp](https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes/)
+
 ### What I Learned
 - React.useCallback
 ```js
