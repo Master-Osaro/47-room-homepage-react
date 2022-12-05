@@ -6,7 +6,8 @@ import iconArrows from './images/icon-arrow.svg';
 import Header from './components/Header';
 import data from './data/data';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { slideIn } from "./utils/gsapAnimate";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,6 +18,10 @@ function App() {
   const next =()=>{
     currentSlide<2?setCurrentSlide(currentSlide+1):setCurrentSlide(0);
   }
+
+  useEffect(()=>{
+    slideIn(".slider__image",".slider__content");
+  })
   return (
     <>
     <Header />

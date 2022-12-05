@@ -100,12 +100,26 @@ nav{
     display: block;
   }
   
-  #navCheckbox,.nav-list{
+  /* #navCheckbox,.nav-list{
+    visibility: hidden;
+  } */
+  /* #navCheckbox:checked~.nav-list{
+    visibility: visible;
+  } */
+  #navCheckbox{
     visibility: hidden;
   }
+  .nav-list{
+    width: 0%;
+    visibility: hidden;
+    transition: all .4s;
+  }
 
+  
   #navCheckbox:checked~.nav-list{
     visibility: visible;
+    width: 100%;
+    transition: all .4s;
   }
 }
 
