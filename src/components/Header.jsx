@@ -21,12 +21,12 @@ const Header =()=>{
                 <div className="logo"><img src={logo} alt="logo" /></div>
                 
                 <input type="checkbox" name="navCheckbox" id="navCheckbox"/>
-                <ul className="nav-list">
+                <div className="nav-list">
                     <a href="#home">home</a>
                     <a href="#shop">shop</a>
                     <a href="#about">about</a>
                     <a href="#contact">contact</a>
-                </ul>
+                </div>
             </nav>
             </div>
             
