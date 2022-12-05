@@ -31,11 +31,11 @@ body{
   justify-content: center;
   align-items: center;
 }
-
 header,main{
   width: 100%;
   max-width: 1440px;
   position: relative;
+
 }
 
 .header__inner{
@@ -53,6 +53,7 @@ nav{
   max-width: 400px;
   padding: 4rem 2rem;
   color: var(--White);
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 720px) {
@@ -118,12 +119,6 @@ nav{
     display: block;
   }
   
-  /* #navCheckbox,.nav-list{
-    visibility: hidden;
-  } */
-  /* #navCheckbox:checked~.nav-list{
-    visibility: visible;
-  } */
   #navCheckbox{
     visibility: hidden;
   }
@@ -177,10 +172,11 @@ nav{
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 6rem;
 }
 
 .slider__content-header{
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 
 .slider__content-body, .about__content-text{
@@ -202,15 +198,6 @@ nav{
   opacity: 0.75;
 }
 
-/* .slider__controls{
-  padding: 2rem;
-  background-color: var(--Black);
-  width: fit-content;
-  display: flex;
-  gap: 2rem;
-  position: absolute;
-  bottom: 0;
-} */
 .slider__controls{
   background-color: var(--Black);
   width: fit-content;
@@ -283,54 +270,4 @@ nav{
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-
-
-
-
-
-
-
-
-
-
-/*================================================*/
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

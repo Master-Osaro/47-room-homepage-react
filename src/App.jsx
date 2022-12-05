@@ -26,7 +26,6 @@ function App() {
       if(e.key==="ArrowRight"){
         next();
       }
-      //console.log(e.key);
   },[prev,next])
 
   useEffect(()=>{
