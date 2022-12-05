@@ -18,7 +18,7 @@ const Header =()=>{
                     }}>
                     <div className="menuIcon"><img src={mobileNavOpen?closeIcon:hamIcon} alt=""/></div>
                 </label>
-                <div className="logo"><img src={logo} alt="" /></div>
+                <div className="logo"><img src={logo} alt="logo" /></div>
                 
                 <input type="checkbox" name="navCheckbox" id="navCheckbox"/>
                 <ul className="nav-list">

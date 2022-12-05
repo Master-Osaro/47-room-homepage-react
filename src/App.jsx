@@ -6,22 +6,36 @@ import iconArrows from './images/icon-arrow.svg';
 import Header from './components/Header';
 import data from './data/data';
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { slideIn } from "./utils/gsapAnimate";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const prev =()=>{
+  const prev =useCallback(()=>{
     currentSlide>0?setCurrentSlide(currentSlide-1):setCurrentSlide(2);
-  }
-  const next =()=>{
+  },[currentSlide])
+  const next =useCallback(()=>{
     currentSlide<2?setCurrentSlide(currentSlide+1):setCurrentSlide(0);
-  }
+  },[currentSlide])
+
+  const handleArrowKeys = useCallback((e)=>{
+      if(e.key==="ArrowLeft"){
+        prev();
+      }
+      if(e.key==="ArrowRight"){
+        next();
+      }
+      console.log(e.key);
+  },[prev,next])
 
   useEffect(()=>{
     slideIn(".slider__image",".slider__content");
-  })
+    window.addEventListener("keydown", handleArrowKeys);
+    return function cleanupListener() {
+      window.removeEventListener("keydown",handleArrowKeys);
+    }
+  },[handleArrowKeys])
   return (
     <>
     <Header />
