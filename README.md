@@ -1,6 +1,49 @@
-# Getting Started with Create React App
+# Frontend Mentor - Room homepage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Design preview for the Room homepage coding challenge](./src/design/desktop-preview.jpg)
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I Learned](#what-i-learned)
+- [Available Scripts](#available-scripts)
+    - [npm start](#npm-start)
+    - [npm run build](#npm-run-build)
+- [Learn More](#learn-more)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Navigate the slider using either their mouse/trackpad or keyboard
+
+
+
+### Links
+
+- Live Site URL: [Live Demo](#)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- [Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
+- [React & React Hooks: useState, useEffect, useCallback](https://reactjs.org/)
+- [GSAP animation library](https://greensock.com/)
 
 ## Available Scripts
 
@@ -14,11 +57,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,42 +67,45 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Keboard Event Listener Issues [StackOverflow: keybard Event Listener is being called multiple times?](https://stackoverflow.com/questions/64434545/react-keydown-event-listener-is-being-called-multiple-times).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Memoization in javascript [Geeks for geeks: Javascript Memoization](https://www.geeksforgeeks.org/javascript-memoization/)
 
-### Analyzing the Bundle Size
+### What I Learned
+- React.useCallback
+```js
+const [currentSlide, setCurrentSlide] = useState(0);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  const prev =useCallback(()=>{
+    currentSlide>0?setCurrentSlide(currentSlide-1):setCurrentSlide(2);
+  },[currentSlide])
+  const next =useCallback(()=>{
+    currentSlide<2?setCurrentSlide(currentSlide+1):setCurrentSlide(0);
+  },[currentSlide])
 
-### Making a Progressive Web App
+  const handleArrowKeys = useCallback((e)=>{
+      if(e.key==="ArrowLeft"){
+        prev();
+      }
+      if(e.key==="ArrowRight"){
+        next();
+      }
+  },[prev,next])
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Author
+- Frontend Mentor - [@Master-Osaro](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@iyoha_osaro](https://www.twitter.com/yourusername)
 
-### `npm run build` fails to minify
+**Had fun building!** 🚀
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

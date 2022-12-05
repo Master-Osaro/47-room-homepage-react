@@ -22,13 +22,11 @@ function App() {
   const handleArrowKeys = useCallback((e)=>{
       if(e.key==="ArrowLeft"){
         prev();
-        document.querySelector('.previous').focus(); //has no effect unfortunately
       }
       if(e.key==="ArrowRight"){
         next();
-        document.querySelector('.next').focus();
       }
-      console.log(e.key);
+      //console.log(e.key);
   },[prev,next])
 
   useEffect(()=>{
