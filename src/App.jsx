@@ -22,18 +22,20 @@ function App() {
   const handleArrowKeys = useCallback((e)=>{
       if(e.key==="ArrowLeft"){
         prev();
+        document.querySelector('.previous').focus(); //has no effect unfortunately
       }
       if(e.key==="ArrowRight"){
         next();
+        document.querySelector('.next').focus();
       }
       console.log(e.key);
   },[prev,next])
 
   useEffect(()=>{
     slideIn(".slider__image",".slider__content");
-    window.addEventListener("keydown", handleArrowKeys);
+    window.addEventListener("keyup", handleArrowKeys);
     return function cleanupListener() {
-      window.removeEventListener("keydown",handleArrowKeys);
+      window.removeEventListener("keyup",handleArrowKeys);
     }
   },[handleArrowKeys])
   return (

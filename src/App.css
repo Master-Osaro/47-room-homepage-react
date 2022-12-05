@@ -106,7 +106,10 @@ nav{
   opacity: 0;
   transition: all .4s;
 }
-.nav-list a:hover::after, .nav-list a:focus-visible::after {
+.nav-list a:hover::after, 
+.nav-list a:focus-visible::after,
+.nav-list a:hover:active, 
+.nav-list a:focus::after {
   opacity: 1;
 }
 
@@ -192,7 +195,10 @@ nav{
   transition: all .2s;
 }
 .slider__content-link:hover,
-.slider__content-link:focus-visible{
+.slider__content-link:focus-visible,
+.slider__content-link:focus,
+.slider__content-link:active
+{
   opacity: 0.75;
 }
 
@@ -227,7 +233,9 @@ nav{
 }
 
 .slider__controls .previous:hover, .slider__controls .next:hover,
-.slider__controls .previous:focus-visible, .slider__controls .next:focus-visible{
+.slider__controls .previous:focus-visible, .slider__controls .next:focus-visible,
+.slider__controls .previous:active, .slider__controls .next:active,
+.slider__controls .previous:focus, .slider__controls .next:focus{
   background-color: var(--Very-Dark-Gray);
 }
 
