@@ -93,6 +93,21 @@ nav{
 .nav-list a{
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-list a::after {
+  content: "";
+  display: block;
+  border: 1px solid var(--White);
+  margin-top: 0.15rem;
+  width: 50%;
+  opacity: 0;
+  transition: all .4s;
+}
+.nav-list a:hover::after, .nav-list a:focus-visible::after {
+  opacity: 1;
 }
 
 @media screen and (max-width: 720px) {
@@ -174,9 +189,14 @@ nav{
   text-decoration: none;
   color: var(--Black);
   letter-spacing: 1.8ch;
+  transition: all .2s;
+}
+.slider__content-link:hover,
+.slider__content-link:focus-visible{
+  opacity: 0.75;
 }
 
-.slider__controls{
+/* .slider__controls{
   padding: 2rem;
   background-color: var(--Black);
   width: fit-content;
@@ -184,6 +204,19 @@ nav{
   gap: 2rem;
   position: absolute;
   bottom: 0;
+} */
+.slider__controls{
+  background-color: var(--Black);
+  width: fit-content;
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+}
+.slider__controls .previous, .slider__controls .next{
+  padding: 2rem;
+  background-color: var(--Black);
+  transition: all .2s;
 }
 .slider__controls-desktop{
   left: 0;
@@ -191,6 +224,11 @@ nav{
 .slider__controls-mobile{
   right: 0;
   display: none;
+}
+
+.slider__controls .previous:hover, .slider__controls .next:hover,
+.slider__controls .previous:focus-visible, .slider__controls .next:focus-visible{
+  background-color: var(--Very-Dark-Gray);
 }
 
 @media screen and (max-width:720px) {
