@@ -2,7 +2,7 @@ import logo from '../images/logo.svg';
 import hamIcon from '../images/icon-hamburger.svg';
 import closeIcon from '../images/icon-close.svg';
 import { useEffect, useState } from 'react';
-const Header =({})=>{
+const Header =()=>{
     let checkbox = '';
     useEffect(()=>{
         checkbox = document.querySelector('#navCheckbox');
@@ -22,10 +22,10 @@ const Header =({})=>{
                 
                 <input type="checkbox" name="navCheckbox" id="navCheckbox"/>
                 <ul className="nav-list">
-                    <a href="#">home</a>
-                    <a href="#">shop</a>
-                    <a href="#">about</a>
-                    <a href="#">contact</a>
+                    <a href="#home">home</a>
+                    <a href="#shop">shop</a>
+                    <a href="#about">about</a>
+                    <a href="#contact">contact</a>
                 </ul>
             </nav>
             </div>
