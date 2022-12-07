@@ -10,7 +10,6 @@
   /* ## Colors */
 
   /* ### Primary */
-
 --Dark-Gray: hsl(0, 0%, 63%);
 --Black: hsl(0, 0%, 0%);
 --White: hsl(0, 0%, 100%);
@@ -19,7 +18,6 @@
 /* ## Typography */
 
 /* ### Body Copy */
-
 --Font-size: 12px;
 }
 
@@ -38,6 +36,7 @@ header,main{
 
 }
 
+/*============== Navigation ==============*/
 .header__inner{
   position: absolute;
   top: 0;
@@ -136,7 +135,7 @@ nav{
   }
 }
 
-
+/*============== Home Slider ==============*/
 .slider{
   display: grid;
   grid-template-columns: auto 1fr;
@@ -240,6 +239,8 @@ nav{
   text-decoration: none;
 }
 
+
+/*============== Home About Section ==============*/
 .about{
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr;
